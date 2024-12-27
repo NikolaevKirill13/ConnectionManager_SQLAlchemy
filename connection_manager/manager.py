@@ -10,7 +10,7 @@ class ConnectionManager:
     Менеджер подключений к базе данных. Создает сессии для одной или нескольких баз данных.
     Работает с помощью декоратора attach_session
     """
-    def __init__(self, **kwargs: AsyncSession) -> None:
+    def __init__(self, **kwargs) -> None:
         """
         :param kwargs: AsyncSession
         """
