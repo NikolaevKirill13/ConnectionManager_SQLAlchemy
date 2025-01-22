@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from functools import wraps
 from typing import Callable
-from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.ext.asyncio import async_sessionmaker
 
 
 class ConnectionManager:
@@ -10,9 +10,9 @@ class ConnectionManager:
     Менеджер подключений к базе данных. Создает сессии для одной или нескольких баз данных.
     Работает с помощью декоратора attach_session
     """
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, **kwargs: async_sessionmaker) -> None:
         """
-        :param kwargs: AsyncSession
+        :param kwargs: async_sessionmaker
         """
 
         # Инициализация соединения или других параметров
